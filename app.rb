@@ -21,14 +21,18 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/attack' do
+  post '/attack' do
     @game = $game
     @game.hit
-    redirect "/over" if @game.over?
-    erb(:attack)
+    redirect @game.over? ? "/over" : "/attack"
   end
 
-  get '/switch' do
+  get '/attack' do
+    @game = $game
+   erb(:attack)
+  end
+
+  post '/switch' do
     @game = $game
     @game.switch
     redirect '/play'

@@ -6,10 +6,10 @@
 <h2> <%= @game.attacker.name %>'s HP: <%= @game.attacker.hp %> </h2>
 <h2> <%= @game.defender.name %>'s HP: <%= @game.defender.hp %> </h2>
 
-<form action="/attack" method="get">
+<form action="/attack" method="post">
   <input type="submit" value="Attack!">
 </form>
 
-<form action="/switch" method="get">
+<form action="/switch" method="post">
   <input type="submit" value="Switch turns">
 </form>
