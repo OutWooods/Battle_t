@@ -8,7 +8,7 @@ describe Game do
     describe "#hit" do
       it 'hits player_2 from player_1' do
         expect(player_2).to receive(:receive_damage)
-        game.hit(player_2)
+        game.hit
       end
     end
 

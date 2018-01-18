@@ -16,8 +16,8 @@ class Game
     @players.last
   end
 
-  def hit(opponent)
-    opponent.receive_damage
+  def hit
+    defender.receive_damage
   end
 
   def switch
