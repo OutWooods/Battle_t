@@ -1,7 +1,6 @@
 <h1> <%= @game.defender.name %> has been struck!</h1>
 <h2> <%= @game.defender.name %>'s HP is now <%= @game.defender.hp %>.</h2>
 
-<p> "Game over" </p>
 <form action="/play" method="get">
   <input type="submit" value="Next move...!">
 </form>

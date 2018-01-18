@@ -39,6 +39,7 @@ class Battle < Sinatra::Base
   end
 
   get '/over' do
+     @game = $game
      erb(:over)
   end
 end

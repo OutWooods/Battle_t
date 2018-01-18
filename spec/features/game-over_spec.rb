@@ -5,6 +5,8 @@ feature 'displays hitpoints' do
     click_button("Attack!")
     expect(page).to_not have_selector("input[type=submit][value='Next move...!']")
     expect(page).to have_content("Game over")
+    expect(page).to have_content("Jennifer is victorious!")
+    expect(page).to have_content("Chris dies a slow and painful death.")
   end
 
   scenario 'when player is close to death, the game is not over' do
