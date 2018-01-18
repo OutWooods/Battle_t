@@ -1,8 +1,9 @@
 
-<h1> <%= @game.attacker.name %> vs. <%= @game.attacker.name %></h1>
+<h1> <%= @game.attacker.name %> vs. <%= @game.defender.name %></h1>
 
 <h2> Attacker is now <%= @game.attacker.name %> </h2>
 
+<h2> <%= @game.attacker.name %>'s HP: <%= @game.attacker.hp %> </h2>
 <h2> <%= @game.defender.name %>'s HP: <%= @game.defender.hp %> </h2>
 
 <form action="/attack" method="get">
