@@ -6,6 +6,14 @@ class Game
     @players = [player_1, player_2]
   end
 
+  def self.create(player_1, player_2)
+    @current_game = Game.new(player_1, player_2)
+  end
+
+  def self.current
+    @current_game
+  end
+
   def attacker
     @players.first
   end
