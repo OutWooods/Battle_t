@@ -26,4 +26,5 @@ class Game
     @players.each {|char| return true if char.hp <= 0}
     false
   end
+
 end
