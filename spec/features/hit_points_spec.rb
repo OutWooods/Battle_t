@@ -4,6 +4,4 @@ feature 'displays hitpoints' do
     expect(page).to have_content("Chris's HP: 100")
     expect(page).to have_content("Jennifer's HP: 100")
   end
-
-
 end
