@@ -22,4 +22,8 @@ class Game
     @players.reverse!
   end
 
+  def over?
+    @players.each {|char| return true if char.hp <= 0}
+    false
+  end
 end
