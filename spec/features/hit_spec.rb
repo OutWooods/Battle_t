@@ -10,4 +10,10 @@ feature 'attack player' do
   scenario 'adjusts player HP' do
     expect(page).to have_content("Chris's HP is now 90.")
   end
+
+  scenario 'refreshing attack pag should not decrease HP' do
+    visit("/attack")
+    expect(page).to have_content("Chris's HP is now 90.")
+    expect(page).to_not have_content("Chris's HP is now 80.")
+  end
 end
