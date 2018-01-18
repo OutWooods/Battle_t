@@ -14,12 +14,12 @@ feature 'switch turns' do
     click_button("Attack!")
     end
 
-    scenario "player 1's health should be changed" do
+    scenario "player 1's health should be changed after switch" do
     expect(page).to_not have_content("Chris's HP is now 90.")
     expect(page).to have_content("Jennifer's HP is now 90.")
     end
 
-    scenario "player 1 should have been attacked" do
+    scenario "attack message should change after switch" do
       expect(page).to_not have_content("Chris has been struck!")
       expect(page).to have_content("Jennifer has been struck!")
     end

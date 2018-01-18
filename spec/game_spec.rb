@@ -42,6 +42,11 @@ describe Game do
       it 'player 1 is defender' do
         expect(game.defender).to eq player_1
       end
+
+      it 'player 1 should recieve damage when attacked' do
+        expect(player_1).to receive(:receive_damage)
+        game.hit
+      end
     end
 
 end
