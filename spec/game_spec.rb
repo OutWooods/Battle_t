@@ -1,8 +1,8 @@
 require "game"
 
 describe Game do
-    let (:player_1) {double :Player}
-    let (:player_2) {double :Player}
+    let (:player_1) {double :Player, hp: 100}
+    let (:player_2) {double :Player, hp: 100}
     subject(:game) { described_class.new(player_1, player_2) }
 
     describe "#hit" do
@@ -44,19 +44,15 @@ describe Game do
 
      describe "#over?" do
        it "returns false if both player_1 and player 2 's are above 0" do
-         allow(player_1).to receive(:hp).and_return(100)
-         allow(player_2).to receive(:hp).and_return(100)
          expect(game.over?).to be false
        end
 
        it "returns true if player_1's health is 0" do
          allow(player_1).to receive(:hp).and_return(0)
-         allow(player_2).to receive(:hp).and_return(100)
          expect(game.over?).to be true
        end
 
        it "returns true if player 2's health is 0" do
-         allow(player_1).to receive(:hp).and_return(100)
          allow(player_2).to receive(:hp).and_return(0)
          expect(game.over?).to be true
        end
