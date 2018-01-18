@@ -13,12 +13,34 @@ describe Game do
     end
 
     describe "#initialize" do
-      it 'initializes player 1' do
-        expect(game.player_1).to eq player_1
+      it "should have player 1 in players" do
+        expect(game.players).to include(player_1)
+      end
+      it "should have player 2 in players" do
+        expect(game.players).to include(player_2)
+      end
+    end
+
+    describe  "#attacker" do
+      it 'starts with player_1 as attacker' do
+        expect(game.attacker).to eq player_1
       end
 
       it 'initializes player 1' do
-        expect(game.player_2).to eq player_2
+        expect(game.defender).to eq player_2
+      end
+    end
+
+    describe  "#switch" do
+      before do
+        game.switch
+      end
+      it 'player 2 is attacker' do
+        expect(game.attacker).to eq player_2
+      end
+
+      it 'player 1 is defender' do
+        expect(game.defender).to eq player_1
       end
     end
 
